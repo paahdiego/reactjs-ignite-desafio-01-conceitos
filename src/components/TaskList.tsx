@@ -15,14 +15,14 @@ export function TaskList() {
   const [newTaskTitle, setNewTaskTitle] = useState("");
 
   function handleCreateNewTask() {
-    const uniqueId = Date.now();
     if (newTaskTitle !== "") {
       const newTask: Task = {
-        id: uniqueId,
+        id: Date.now(),
         title: newTaskTitle,
         isComplete: false,
       };
       setTasks([...tasks, newTask]);
+      setNewTaskTitle("");
     }
   }
 
